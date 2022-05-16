@@ -22,7 +22,7 @@ https://netflix-mh-mahedimm.vercel.app/
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/VLvCK3H/mh-netflix.png)
+![App Screenshot](https://i.ibb.co/qDRgZx0/mh-netflix.png)
 ![App Screenshot](https://i.ibb.co/N3DkzxD/mh-netflx-2.png)
 
 
