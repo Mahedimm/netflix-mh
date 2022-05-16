@@ -4,6 +4,7 @@ import { modalState } from "../atoms/modalAtom";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
+import Plans from "../components/Plans";
 import Row from "../components/Row";
 import useAuth from "../hooks/useAuth";
 import { Movie } from "../typing";
@@ -32,9 +33,12 @@ export default function Home({
 }: Props) {
   const { loading } = useAuth();
   const showModal = useRecoilValue(modalState);
+  const subscription = true;
 
-  !!loading && <svg className="animate-bounce w-6 h-6 ..."></svg>;
+  if (!!loading || subscription === null)
+    return <svg className="animate-bounce w-6 h-6 ..."></svg>;
 
+  if (!subscription) return <Plans />;
   return (
     <div className=" relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
       <Head>

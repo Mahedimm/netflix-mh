@@ -1,8 +1,11 @@
 import { BellIcon, SearchIcon } from "@heroicons/react/solid";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 
 const Header = () => {
+  const router = useRouter();
   const { logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -31,7 +34,20 @@ const Header = () => {
           className="cursor-pointer object-container"
         />
         <ul className="hidden md:flex space-x-4">
-          <li className="headerLink">Home</li>
+          <li>
+            <Link href={"/"} className={`headerLink `}>
+              <a
+                className={
+                  router.pathname === "/"
+                    ? "text-red-600 font-semibold"
+                    : "text-white"
+                }
+              >
+                Home
+              </a>
+            </Link>
+          </li>
+
           <li className="headerLink">TV Shows</li>
           <li className="headerLink">Movies</li>
           <li className="headerLink">New & popular</li>
